@@ -5,6 +5,7 @@
     state: present
   with_items:
   - i3
+  - qt-config
   become: yes
 
 - name: Deploy config dirs
