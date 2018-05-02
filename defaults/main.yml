@@ -1,0 +1,8 @@
+---
+config_templates:
+- template: i3_config.j2
+  dest: .config/i3/config
+- template: terminalrc.j2
+  dest: .config/xfce4/terminal/terminalrc
+- template: volumeicon.j2
+  dest: .config/volumeicon/volumeicon
