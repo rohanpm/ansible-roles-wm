@@ -7,6 +7,7 @@
   - i3
   - qt-config
   - volumeicon
+  - /usr/bin/xlock
   become: yes
 
 - name: Deploy config dirs
