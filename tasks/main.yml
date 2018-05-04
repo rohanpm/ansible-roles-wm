@@ -21,3 +21,11 @@
     src: "{{ item.template }}"
     dest: "{{ lookup('env', 'HOME') }}/{{ item.dest }}"
   with_items: "{{ config_templates }}"
+  register: deployed_config
+
+- name: Reload i3
+  command: i3-msg reload
+  # FIXME: any nice way to make this run only when i3 changed,
+  # while keeping the config_templates loop structure?
+  when: deployed_config|changed
+  ignore_errors: yes
