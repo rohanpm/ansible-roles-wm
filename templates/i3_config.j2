@@ -181,3 +181,7 @@ exec --no-startup-id nm-applet
 # Delay here because there seems to be a race,
 # perhaps with pulseaudio startup?
 exec --no-startup-id /bin/sh -c "sleep 15; volumeicon"
+
+# Reload i3 shortly after startup because
+# xfsettingsd may have changed font/dpi/etc
+exec --no-startup-id /bin/sh -c "sleep 4; i3-msg restart"
