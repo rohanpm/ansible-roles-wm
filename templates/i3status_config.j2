@@ -12,11 +12,12 @@ general {
 }
 
 order += "load"
-order += "tztime local"
 
 {% for item in timezones %}
 order += "tztime {{ item.label }}"
 {% endfor %}
+
+order += "tztime local"
 
 tztime local {
         format = "%Y-%m-%d %H:%M"
