@@ -24,8 +24,8 @@
   register: deployed_config
 
 - name: Reload i3
-  command: i3-msg reload
+  command: /bin/sh -c "killall i3status ; i3-msg restart"
   # FIXME: any nice way to make this run only when i3 changed,
   # while keeping the config_templates loop structure?
-  when: deployed_config|changed
+  when: deployed_config is changed
   ignore_errors: yes
